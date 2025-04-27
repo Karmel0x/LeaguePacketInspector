@@ -1,0 +1,33 @@
+{
+  "name": "packet-inspector-front",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.5.3",
+    "@tsconfig/svelte": "^5.0.4",
+    "@types/node": "^22.15.2",
+    "autoprefixer": "^10.4.20",
+    "bits-ui": "^0.22.0",
+    "clsx": "^2.1.1",
+    "cmdk-sv": "^0.0.19",
+    "lucide-svelte": "^0.484.0",
+    "mode-watcher": "^0.5.1",
+    "paneforge": "^0.0.6",
+    "svelte": "^4.2.19",
+    "svelte-check": "^4.1.4",
+    "svelte-sonner": "^0.3.28",
+    "tailwind-merge": "^3.0.2",
+    "tailwind-variants": "^1.0.0",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "~5.8.3",
+    "vite": "^4.5.10"
+  }
+}

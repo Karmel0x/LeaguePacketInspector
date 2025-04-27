@@ -1,0 +1,12 @@
+{
+  "name": "packet-inspector-server",
+  "scripts": {
+    "dev": "bun index.ts"
+  },
+  "dependencies": {
+    "ws": "^8.18.1"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1"
+  }
+}

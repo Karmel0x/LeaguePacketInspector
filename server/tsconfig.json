@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
+    "esModuleInterop": true,
+    "incremental": false,
+    "isolatedModules": true,
+    "lib": [
+      "ES2024"
+    ],
+    "module": "NodeNext",
+    "moduleDetection": "force",
+    "moduleResolution": "NodeNext",
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2024",
+    "checkJs": false,
+    "noEmit": true,
+    "allowJs": true
+  },
+  "exclude": [
+    "../gamedatabb/data/**/*",
+    "../gamedatabb/maps/**/*"
+  ]
+}
