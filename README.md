@@ -2,10 +2,13 @@
 Packet Inspector (packet editor) is a tool designed for analyzing, editing, and replaying network packets. This tool is particularly useful for debugging. Built specifically for LoL but may be implemented to be used with other games.
 
 ## Features
-
 - **Packet Analysis**: View detailed information about network packets, including their direction, size, and content.
 - **Packet Editing**: Modify packet data (hex or parsed JSON) and resend it.
 - **Replay Support**: Load packet data from saved files.
+
+### screenshots
+![image1](https://github.com/user-attachments/assets/e73c078f-e29b-4428-ae7c-a3c53442eb43)
+![image2](https://github.com/user-attachments/assets/556efb62-0f21-405b-b0d9-4de1b1ffc041)
 
 ## Installation
 Before installing it, you need [LeagueEmulatorJS](https://github.com/Karmel0x/LeagueEmulatorJS), follow `Installation` instructions there.  
