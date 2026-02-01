@@ -9,6 +9,8 @@ import '@repo/packets/register';
 import { ReplayRecord } from './_replayreaders/replay-reader';
 
 
+type Optional<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
+
 export default function packetParser(packet1: ReplayRecord, i: number) {
 	if (!packet1.data)
 		throw new Error('packet data is empty');
@@ -46,6 +48,7 @@ export default function packetParser(packet1: ReplayRecord, i: number) {
 	let packetDetails = {
 		id: i,
 		time: packet1.time,
+		direction: packet1.direction,
 		packet: packetId,
 		channel,
 		bytes,
@@ -55,7 +58,7 @@ export default function packetParser(packet1: ReplayRecord, i: number) {
 		peers: packet1.peers || [],
 		channelName: channels[channel] || '',
 		packetName,
-	} satisfies Omit<PacketLog, 'direction'>;
+	} satisfies Optional<PacketLog, 'direction'>;
 
 	return packetDetails;
 }

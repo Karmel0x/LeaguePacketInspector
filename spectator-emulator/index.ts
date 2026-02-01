@@ -1,4 +1,4 @@
-// ts-node tools/spectator-emulator/index.ts ../temp/replays/replay_file.rlp.json
+// tsx tools/spectator-emulator/index.ts ../temp/replays/replay_file.rlp.json
 
 import { bufferToArrayBuffer } from '@repo/gameserver/src/core/logging';
 import Timer from '@repo/gameserver/src/core/timer';
@@ -36,6 +36,14 @@ async function start_spectator(peerNum: number) {
 
 		if (!packet.time) {
 			//console.log('packet without time:', packet);
+			continue;
+		}
+
+		if (packet.direction === 'recv') {
+			continue;
+		}
+
+		if (packet.peers && packet.peers.length > 0 && !packet.peers.includes(peerNum)) {
 			continue;
 		}
 

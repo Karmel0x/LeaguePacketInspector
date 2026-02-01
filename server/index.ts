@@ -58,6 +58,10 @@ wss.on('connection', (ws) => {
 		}
 
 		if (res.cmd === 'loadpackets') {
+			if (!replayUnpacked) {
+				console.error('replay not loaded');
+				return;
+			}
 
 			let offset = res.offset || 0;
 			if (offset < 0)
@@ -98,7 +102,7 @@ wss.on('connection', (ws) => {
 
 		if (res.cmd === 'loadpackets2') {
 			if (!replayUnpacked) {
-				console.log('replay not loaded');
+				console.error('replay not loaded');
 				return;
 			}
 
@@ -164,7 +168,7 @@ wss.on('connection', (ws) => {
 		}
 		if (res.cmd === 'loadreplaylist') {
 			if (!fs.existsSync(replayDir)) {
-				console.log('replay dir does not exist', replayDir);
+				console.error('replay dir does not exist', replayDir);
 			}
 			else {
 				let replayList = fs.readdirSync(replayDir).filter((value) => {

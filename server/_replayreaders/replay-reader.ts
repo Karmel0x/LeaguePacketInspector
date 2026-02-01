@@ -3,6 +3,7 @@ export type ReplayRecord = {
     time: number;
     peers?: number[];
     channel?: number;
+    direction?: 'sent' | 'recv';
     size: number;
     data: ArrayBuffer;
 };
@@ -14,7 +15,10 @@ export type ReplayFileRecord = ReplayRecord & {
 };
 
 export interface ReplayFileReader {
-    (filePath: string): ReplayFileRecord[];
+    (filePath: string): {
+        header?: any;
+        packets: ReplayFileRecord[],
+    };
 }
 
 export interface ReplayReader {

@@ -1,2 +1,3 @@
+cd ..
 cd spectator-emulator
-ts-node -T index.ts %1
+tsx index.ts %1

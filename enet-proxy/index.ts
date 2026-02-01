@@ -16,7 +16,7 @@ const destConfig = {
 
 let ws: WebSocket;
 
-function logPacket(peerNum: number, data: ArrayBuffer, channel: number, direction: 'sent' | 'recv') {
+function logPacket(peerNum: number, data: ArrayBufferLike, channel: number, direction: 'sent' | 'recv') {
     const packet = Buffer.from(data);
     console.log(direction, 'packet of size', packet.byteLength, 'from', peerNum, 'on channel', channel, 'data:', data);
 

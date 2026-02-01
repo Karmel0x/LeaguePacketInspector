@@ -1,2 +1,3 @@
+cd ..
 cd enet-proxy
-ts-node -T index.ts
+tsx index.ts

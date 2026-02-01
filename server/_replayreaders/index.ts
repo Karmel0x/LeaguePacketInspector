@@ -1,6 +1,6 @@
 import reader_json from './json';
 import reader_lrpkt from './lrpkt';
-import { ReplayFileReader, ReplayRecord } from './replay-reader';
+import type { ReplayFileReader, ReplayRecord } from './replay-reader';
 
 const readers = {
 	json: reader_json,
@@ -21,7 +21,7 @@ export default function (filePath: string) {
 
 	const replay: ReturnType<ReplayFileReader> = reader(filePath);
 
-	const replay2 = replay.map((record, i) => {
+	const packets2 = replay.packets.map((record, i) => {
 		let data: ArrayBuffer | Buffer | undefined = undefined;
 		if (record.data)
 			data = record.data;
@@ -43,18 +43,19 @@ export default function (filePath: string) {
 			time: record.time,
 			peers: record.peers,
 			channel: record.channel,
+			direction: record.direction,
 			size: data.byteLength,
 			data,
 		} as ReplayRecord;
 	});
 
-	const replay3 = replay2.filter(Boolean) as ReplayRecord[];
+	const packets3 = packets2.filter(Boolean) as ReplayRecord[];
 
-	if (replay3.every(v => v.time < 10 * 1000)) {
-		replay3.forEach(v => {
+	if (packets3.every(v => v.time < 10 * 1000)) {
+		packets3.forEach(v => {
 			v.time *= 1000;
 		});
 	}
 
-	return replay3;
+	return packets3;
 }

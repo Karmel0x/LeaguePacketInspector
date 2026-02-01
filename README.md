@@ -14,7 +14,7 @@ Packet Inspector (packet editor) is a tool designed for analyzing, editing, and 
 Before installing it, you need [LeagueEmulatorJS](https://github.com/Karmel0x/LeagueEmulatorJS), follow `Installation` instructions there.  
 Then use this commands to install the packet inspector:
 ```
-npm install -g ts-node
+npm install -g tsx
 cd LeagueEmulatorJS
 
 cd apps
@@ -43,13 +43,17 @@ Open your browser at [http://localhost:5173](http://localhost:5173) to access ap
 ## enet-proxy
 Intercept and log packets between the client and server.  
 - run game server on port 5119
-- run it with: `ts-node -T enet-proxy/index.ts`  
+- run it with: `tsx enet-proxy/index.ts`  
 - run game using port 5118
 
 ## spectator-emulator
 Load and replay packet data from saved files. You can find replays [here](https://github.com/Karmel0x/LeaguePacketInspector/issues/1).  
-- run it with: `ts-node -T spectator-emulator/index.ts <replay_file_path>`  
+- run it with: `tsx spectator-emulator/index.ts <replay_file_path>`  
 - run game using port 5119 or use together with enet-proxy
+
+## game-emulator
+Like spectator-emulator but to server direction.  
+- run it with: `tsx game-emulator/index.ts <replay_file_path>`  
 
 ## TODO
 
